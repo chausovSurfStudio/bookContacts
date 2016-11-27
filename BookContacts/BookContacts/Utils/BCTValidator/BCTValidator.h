@@ -13,16 +13,13 @@
 
 + (instancetype)sharedInstance;
 
-/** Проверяет на вход строку с именем контакта, возвращает YES, если она корректная, NO в противном случае */
-- (BOOL)validateContactName:(NSString *)name;
+/** Проверяет имя контакта на корректность, возвращает корректное имя контакта или nil, если входная строка невалидна */
+- (NSString *)validateContactName:(NSString *)name;
 
-/** Проверяет на вход строку с фамилией контакта, возвращает YES, если она корректная, NO в противном случае */
-- (BOOL)validateContactSurname:(NSString *)surname;
+/** Проверяет фамилию контакта на корректность, возвращает корректную фамилию контакта или nil, если входная строка невалидна */
+- (NSString *)validateContactSurname:(NSString *)surname;
 
-/** Проверяет на вход строку с номером телефона контакта, возвращает YES, если она корректная, NO в противном случае */
-- (BOOL)validatePhoneNumber:(NSString *)phoneNumber;
-
-/** Обрезает символы переноса строки и пробелы с обоих концов строки */
-- (NSString *)trimmingWhitespaceAndNewlineCharecters:(NSString *)string;
+/** Проверяет номер контакта на корректность, возвращает корректный номер или nil, если входная строка невалидна */
+- (NSString *)validatePhoneNumber:(NSString *)phoneNumber;
 
 @end

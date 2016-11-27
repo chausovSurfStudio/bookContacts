@@ -21,19 +21,19 @@
     return sharedInstance;
 }
 
-/** Проверяет на вход строку с именем контакта, возвращает YES, если она корректная, NO в противном случае */
-- (BOOL)validateContactName:(NSString *)name {
-    return NO;
+/** Проверяет имя контакта на корректность, возвращает корректное имя контакта или nil, если входная строка невалидна */
+- (NSString *)validateContactName:(NSString *)name {
+    return nil;
 }
 
-/** Проверяет на вход строку с фамилией контакта, возвращает YES, если она корректная, NO в противном случае */
-- (BOOL)validateContactSurname:(NSString *)surname {
-    return NO;
+/** Проверяет фамилию контакта на корректность, возвращает корректную фамилию контакта или nil, если входная строка невалидна */
+- (NSString *)validateContactSurname:(NSString *)surname {
+    return nil;
 }
 
-/** Проверяет на вход строку с номером телефона контакта, возвращает YES, если она корректная, NO в противном случае */
-- (BOOL)validatePhoneNumber:(NSString *)phoneNumber {
-    return NO;
+/** Проверяет номер контакта на корректность, возвращает корректный номер или nil, если входная строка невалидна */
+- (NSString *)validatePhoneNumber:(NSString *)phoneNumber {
+    return nil;
 }
 
 /** Обрезает символы переноса строки и пробелы с обоих концов строки */
