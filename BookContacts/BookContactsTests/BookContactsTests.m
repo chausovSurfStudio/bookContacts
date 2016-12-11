@@ -42,7 +42,7 @@
 - (void)testName03 {
     // Имя контакта содержит пробелы на концах, должны обрезаться
     NSString *name = @"   Qwerty   ";
-    XCTAssertEqual([[BCTValidator sharedInstance] validateContactName:name], @"Qwerty");
+    XCTAssertEqualObjects([[BCTValidator sharedInstance] validateContactName:name], @"Qwerty");
 }
 
 - (void)testName04 {
@@ -73,7 +73,7 @@
 - (void)testSurname03 {
     // Фамилия контакта содержит пробелы на концах, должны обрезаться
     NSString *surname = @"   Qwerty   ";
-    XCTAssertEqual([[BCTValidator sharedInstance] validateContactSurname:surname], @"Qwerty");
+    XCTAssertEqualObjects([[BCTValidator sharedInstance] validateContactSurname:surname], @"Qwerty");
 }
 
 - (void)testSurname04 {
@@ -84,7 +84,7 @@
 
 - (void)testSurname05 {
     // Слишком длинная фамилия для контакта
-    NSString *surname = @"Qwertyuiopasdfghjkl";
+    NSString *surname = @"Qwertyuiopasdfghjklkjhsadgfkjasd";
     XCTAssertNil([[BCTValidator sharedInstance] validateContactSurname:surname]);
 }
 
@@ -109,7 +109,19 @@
 
 - (void)testPhone04 {
     // В номере присутствуют символы, не являющиеся цифрами или знаком "+"
-    NSString *phoneNumber = @"+-987654йцуqwe.,";
+    NSString *phoneNumber = @"+-98йwe.,";
+    XCTAssertNil([[BCTValidator sharedInstance] validatePhoneNumber:phoneNumber]);
+}
+
+- (void)testPhone05 {
+    // В номере присутствуют несколько символов "+"
+    NSString *phoneNumber = @"+873452++34";
+    XCTAssertNil([[BCTValidator sharedInstance] validatePhoneNumber:phoneNumber]);
+}
+
+- (void)testPhone06 {
+    // В номере символ "+" не на первом месте
+    NSString *phoneNumber = @"873452+34";
     XCTAssertNil([[BCTValidator sharedInstance] validatePhoneNumber:phoneNumber]);
 }
 
