@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class BCTContact, BCTPhoneNumber;
+
 @interface BCTDataBaseManager : NSObject
 
 + (instancetype)sharedInstance;
+
+- (NSArray <BCTContact *> *)findAndSortAllContacts;
 
 @end

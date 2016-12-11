@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="BCTContact" representedClassName="BCTContact" syncable="YES">
+        <attribute name="liked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="addedPhoneNumbers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BCTPhoneNumber" inverseName="contact" inverseEntity="BCTPhoneNumber" syncable="YES"/>
+        <relationship name="mainPhoneNumber" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BCTPhoneNumber" inverseName="mainContact" inverseEntity="BCTPhoneNumber" syncable="YES"/>
+    </entity>
+    <entity name="BCTPhoneNumber" representedClassName="BCTPhoneNumber" syncable="YES">
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BCTContact" inverseName="addedPhoneNumbers" inverseEntity="BCTContact" syncable="YES"/>
+        <relationship name="mainContact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BCTContact" inverseName="mainPhoneNumber" inverseEntity="BCTContact" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BCTContact" positionX="-27" positionY="18" width="128" height="120"/>
+        <element name="BCTPhoneNumber" positionX="18" positionY="63" width="128" height="90"/>
+    </elements>
 </model>

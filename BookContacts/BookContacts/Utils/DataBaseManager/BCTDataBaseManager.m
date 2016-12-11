@@ -8,6 +8,10 @@
 
 #import "BCTDataBaseManager.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import "AppDelegate.h"
+
+#import "BCTContact.h"
+#import "BCTPhoneNumber.h"
 
 @implementation BCTDataBaseManager
 
@@ -20,6 +24,16 @@
     });
     
     return sharedInstance;
+}
+
+- (NSArray <BCTContact *> *)findAndSortAllContacts {
+    NSManagedObjectContext *context = [AppDelegate appDelegate].managedObjectContext;
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    [fetch setEntity:[NSEntityDescription entityForName:@"BCTContact" inManagedObjectContext:context]];
+    NSArray <BCTContact *> *result = [context executeFetchRequest:fetch error:nil];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortedResult = [result sortedArrayUsingDescriptors:@[sortDescriptor]];
+    return sortedResult;
 }
 
 @end

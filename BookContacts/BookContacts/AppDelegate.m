@@ -12,12 +12,17 @@
 
 #import <MagicalRecord/MagicalRecord.h>
 
+static AppDelegate *instance;
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate *)appDelegate{
+    return instance;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -26,6 +31,8 @@
     BCTMainViewController *ctrl = [[BCTMainViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:ctrl];
     self.window.rootViewController = navigationController;
+    
+    instance = self;
     
     return YES;
 }

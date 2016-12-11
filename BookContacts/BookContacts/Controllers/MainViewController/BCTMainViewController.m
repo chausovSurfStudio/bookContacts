@@ -9,9 +9,14 @@
 #import "BCTMainViewController.h"
 #import "BCTSearchTableViewCell.h"
 
+#import "BCTDataBaseManager.h"
+#import "BCTContact.h"
+#import "BCTPhoneNumber.h"
+
 @interface BCTMainViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray <BCTContact *> *contacts;
 
 @end
 
@@ -21,6 +26,8 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Список контактов";
     [self configureTableView];
+    
+    self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
 }
 
 - (void)configureTableView {
@@ -32,8 +39,12 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return section == 0 ? 1 : self.contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

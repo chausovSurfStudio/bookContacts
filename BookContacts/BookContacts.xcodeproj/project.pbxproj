@@ -12,6 +12,10 @@
 		180CFDA31DFD50770042A270 /* BCTSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDA11DFD50770042A270 /* BCTSearchTableViewCell.m */; };
 		180CFDA41DFD50770042A270 /* BCTSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */; };
 		180CFDA81DFD5A9F0042A270 /* BCTDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDA71DFD5A9F0042A270 /* BCTDataBaseManager.m */; };
+		180CFDD51DFD64470042A270 /* BCTContact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDCE1DFD64470042A270 /* BCTContact+CoreDataProperties.m */; };
+		180CFDD61DFD64470042A270 /* BCTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDD01DFD64470042A270 /* BCTContact.m */; };
+		180CFDD71DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDD21DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m */; };
+		180CFDD81DFD64470042A270 /* BCTPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDD41DFD64470042A270 /* BCTPhoneNumber.m */; };
 		18A86FE71DEB21DC00B6439E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE61DEB21DC00B6439E /* main.m */; };
 		18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE91DEB21DC00B6439E /* AppDelegate.m */; };
 		18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FEC1DEB21DC00B6439E /* ViewController.m */; };
@@ -53,6 +57,14 @@
 		180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BCTSearchTableViewCell.xib; path = Controllers/MainViewController/BCTSearchTableViewCell.xib; sourceTree = "<group>"; };
 		180CFDA61DFD5A9F0042A270 /* BCTDataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTDataBaseManager.h; path = Utils/DataBaseManager/BCTDataBaseManager.h; sourceTree = "<group>"; };
 		180CFDA71DFD5A9F0042A270 /* BCTDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTDataBaseManager.m; path = Utils/DataBaseManager/BCTDataBaseManager.m; sourceTree = "<group>"; };
+		180CFDCD1DFD64470042A270 /* BCTContact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BCTContact+CoreDataProperties.h"; path = "Model/BCTContact+CoreDataProperties.h"; sourceTree = "<group>"; };
+		180CFDCE1DFD64470042A270 /* BCTContact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BCTContact+CoreDataProperties.m"; path = "Model/BCTContact+CoreDataProperties.m"; sourceTree = "<group>"; };
+		180CFDCF1DFD64470042A270 /* BCTContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTContact.h; path = Model/BCTContact.h; sourceTree = "<group>"; };
+		180CFDD01DFD64470042A270 /* BCTContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTContact.m; path = Model/BCTContact.m; sourceTree = "<group>"; };
+		180CFDD11DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BCTPhoneNumber+CoreDataProperties.h"; path = "Model/BCTPhoneNumber+CoreDataProperties.h"; sourceTree = "<group>"; };
+		180CFDD21DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BCTPhoneNumber+CoreDataProperties.m"; path = "Model/BCTPhoneNumber+CoreDataProperties.m"; sourceTree = "<group>"; };
+		180CFDD31DFD64470042A270 /* BCTPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTPhoneNumber.h; path = Model/BCTPhoneNumber.h; sourceTree = "<group>"; };
+		180CFDD41DFD64470042A270 /* BCTPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTPhoneNumber.m; path = Model/BCTPhoneNumber.m; sourceTree = "<group>"; };
 		18A86FE21DEB21DC00B6439E /* BookContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A86FE61DEB21DC00B6439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A86FE81DEB21DC00B6439E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +224,14 @@
 		18A8701D1DEB221200B6439E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				180CFDCD1DFD64470042A270 /* BCTContact+CoreDataProperties.h */,
+				180CFDCE1DFD64470042A270 /* BCTContact+CoreDataProperties.m */,
+				180CFDCF1DFD64470042A270 /* BCTContact.h */,
+				180CFDD01DFD64470042A270 /* BCTContact.m */,
+				180CFDD11DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.h */,
+				180CFDD21DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m */,
+				180CFDD31DFD64470042A270 /* BCTPhoneNumber.h */,
+				180CFDD41DFD64470042A270 /* BCTPhoneNumber.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -436,9 +456,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180CFDD51DFD64470042A270 /* BCTContact+CoreDataProperties.m in Sources */,
 				180CFDA81DFD5A9F0042A270 /* BCTDataBaseManager.m in Sources */,
 				18A870221DEB22D100B6439E /* BCTValidator.m in Sources */,
+				180CFDD81DFD64470042A270 /* BCTPhoneNumber.m in Sources */,
 				18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */,
+				180CFDD71DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m in Sources */,
+				180CFDD61DFD64470042A270 /* BCTContact.m in Sources */,
 				18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */,
 				18A86FE71DEB21DC00B6439E /* main.m in Sources */,
 				180CFDA31DFD50770042A270 /* BCTSearchTableViewCell.m in Sources */,
