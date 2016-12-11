@@ -10,6 +10,8 @@
 
 #import "BCTMainViewController.h"
 
+#import <MagicalRecord/MagicalRecord.h>
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +20,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [MagicalRecord setupCoreDataStack];
     
     BCTMainViewController *ctrl = [[BCTMainViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:ctrl];

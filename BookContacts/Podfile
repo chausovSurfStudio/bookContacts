@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+inhibit_all_warnings!
+
+target ‘BookContacts’ do
+
+pod 'FrameAccessor', '2.0'
+pod 'MagicalRecord', '~> 2.3'
+pod 'libextobjc', '0.4.1'
+
+end

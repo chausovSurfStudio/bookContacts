@@ -11,6 +11,7 @@
 		180CFD9F1DFD4F330042A270 /* BCTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CFD9D1DFD4F330042A270 /* BCTMainViewController.xib */; };
 		180CFDA31DFD50770042A270 /* BCTSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDA11DFD50770042A270 /* BCTSearchTableViewCell.m */; };
 		180CFDA41DFD50770042A270 /* BCTSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */; };
+		180CFDA81DFD5A9F0042A270 /* BCTDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDA71DFD5A9F0042A270 /* BCTDataBaseManager.m */; };
 		18A86FE71DEB21DC00B6439E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE61DEB21DC00B6439E /* main.m */; };
 		18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE91DEB21DC00B6439E /* AppDelegate.m */; };
 		18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FEC1DEB21DC00B6439E /* ViewController.m */; };
@@ -21,6 +22,7 @@
 		18A870031DEB21DC00B6439E /* BookContactsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A870021DEB21DC00B6439E /* BookContactsTests.m */; };
 		18A8700E1DEB21DC00B6439E /* BookContactsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8700D1DEB21DC00B6439E /* BookContactsUITests.m */; };
 		18A870221DEB22D100B6439E /* BCTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A870211DEB22D100B6439E /* BCTValidator.m */; };
+		BF803BE954FDFDBC66CB701C /* libPods-BookContacts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E065B62674ED2E59BB121D0 /* libPods-BookContacts.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		180CFDA01DFD50770042A270 /* BCTSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTSearchTableViewCell.h; path = Controllers/MainViewController/BCTSearchTableViewCell.h; sourceTree = "<group>"; };
 		180CFDA11DFD50770042A270 /* BCTSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTSearchTableViewCell.m; path = Controllers/MainViewController/BCTSearchTableViewCell.m; sourceTree = "<group>"; };
 		180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BCTSearchTableViewCell.xib; path = Controllers/MainViewController/BCTSearchTableViewCell.xib; sourceTree = "<group>"; };
+		180CFDA61DFD5A9F0042A270 /* BCTDataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTDataBaseManager.h; path = Utils/DataBaseManager/BCTDataBaseManager.h; sourceTree = "<group>"; };
+		180CFDA71DFD5A9F0042A270 /* BCTDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTDataBaseManager.m; path = Utils/DataBaseManager/BCTDataBaseManager.m; sourceTree = "<group>"; };
 		18A86FE21DEB21DC00B6439E /* BookContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A86FE61DEB21DC00B6439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A86FE81DEB21DC00B6439E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +72,9 @@
 		18A8700F1DEB21DC00B6439E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A870201DEB22D100B6439E /* BCTValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTValidator.h; path = Utils/BCTValidator/BCTValidator.h; sourceTree = "<group>"; };
 		18A870211DEB22D100B6439E /* BCTValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTValidator.m; path = Utils/BCTValidator/BCTValidator.m; sourceTree = "<group>"; };
+		3E065B62674ED2E59BB121D0 /* libPods-BookContacts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookContacts.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD34CD4647AA9AC2A0E4356 /* Pods-BookContacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookContacts.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookContacts/Pods-BookContacts.release.xcconfig"; sourceTree = "<group>"; };
+		5F86CD0C4873D8A9874782CF /* Pods-BookContacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookContacts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookContacts/Pods-BookContacts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF803BE954FDFDBC66CB701C /* libPods-BookContacts.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +116,15 @@
 			name = MainViewController;
 			sourceTree = "<group>";
 		};
+		180CFDA51DFD5A6E0042A270 /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				180CFDA61DFD5A9F0042A270 /* BCTDataBaseManager.h */,
+				180CFDA71DFD5A9F0042A270 /* BCTDataBaseManager.m */,
+			);
+			name = DataBaseManager;
+			sourceTree = "<group>";
+		};
 		18A86FD91DEB21DC00B6439E = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +132,8 @@
 				18A870011DEB21DC00B6439E /* BookContactsTests */,
 				18A8700C1DEB21DC00B6439E /* BookContactsUITests */,
 				18A86FE31DEB21DC00B6439E /* Products */,
+				6502E82C2AF8B5770E6CD182 /* Pods */,
+				C247F347FCBD6C8CC63C89C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +219,7 @@
 		18A8701E1DEB222100B6439E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				180CFDA51DFD5A6E0042A270 /* DataBaseManager */,
 				18A8701F1DEB22AF00B6439E /* BCTValidator */,
 				180CFD951DFD49EB0042A270 /* BCTConstant.h */,
 				180CFD961DFD49FF0042A270 /* BCTThemeConstant.h */,
@@ -216,6 +236,23 @@
 			name = BCTValidator;
 			sourceTree = "<group>";
 		};
+		6502E82C2AF8B5770E6CD182 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F86CD0C4873D8A9874782CF /* Pods-BookContacts.debug.xcconfig */,
+				5BD34CD4647AA9AC2A0E4356 /* Pods-BookContacts.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C247F347FCBD6C8CC63C89C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E065B62674ED2E59BB121D0 /* libPods-BookContacts.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18A870121DEB21DC00B6439E /* Build configuration list for PBXNativeTarget "BookContacts" */;
 			buildPhases = (
+				EF49F55E3AC4B7F21B07DDB2 /* [CP] Check Pods Manifest.lock */,
 				18A86FDE1DEB21DC00B6439E /* Sources */,
 				18A86FDF1DEB21DC00B6439E /* Frameworks */,
 				18A86FE01DEB21DC00B6439E /* Resources */,
+				080C9668B8CAC19601C4F4A3 /* [CP] Embed Pods Frameworks */,
+				1AABC31D060517C414006EC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,11 +383,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		080C9668B8CAC19601C4F4A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookContacts/Pods-BookContacts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AABC31D060517C414006EC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookContacts/Pods-BookContacts-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF49F55E3AC4B7F21B07DDB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18A86FDE1DEB21DC00B6439E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180CFDA81DFD5A9F0042A270 /* BCTDataBaseManager.m in Sources */,
 				18A870221DEB22D100B6439E /* BCTValidator.m in Sources */,
 				18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */,
 				18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */,
@@ -495,6 +584,7 @@
 		};
 		18A870131DEB21DC00B6439E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F86CD0C4873D8A9874782CF /* Pods-BookContacts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookContacts/Info.plist;
@@ -506,6 +596,7 @@
 		};
 		18A870141DEB21DC00B6439E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD34CD4647AA9AC2A0E4356 /* Pods-BookContacts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookContacts/Info.plist;
