@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0I-h9-y2l">
-                        <rect key="frame" x="0.0" y="83" width="320" height="1"/>
+                        <rect key="frame" x="15" y="83" width="290" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="HSo-Nm-m3Q"/>
@@ -40,10 +40,10 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="pue-pe-Mkp" secondAttribute="trailing" constant="15" id="0Cv-xo-gz6"/>
                     <constraint firstAttribute="bottom" secondItem="F0I-h9-y2l" secondAttribute="bottom" id="38g-fa-mqP"/>
-                    <constraint firstItem="F0I-h9-y2l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DFg-oA-Wzk"/>
+                    <constraint firstItem="F0I-h9-y2l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="DFg-oA-Wzk"/>
                     <constraint firstItem="pue-pe-Mkp" firstAttribute="top" secondItem="UqV-sw-xey" secondAttribute="bottom" constant="3" id="HMg-bz-LpX"/>
                     <constraint firstItem="UqV-sw-xey" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="a71-yI-gax"/>
-                    <constraint firstAttribute="trailing" secondItem="F0I-h9-y2l" secondAttribute="trailing" id="djY-ED-vA4"/>
+                    <constraint firstAttribute="trailing" secondItem="F0I-h9-y2l" secondAttribute="trailing" constant="15" id="djY-ED-vA4"/>
                     <constraint firstAttribute="trailing" secondItem="UqV-sw-xey" secondAttribute="trailing" constant="15" id="hdt-mz-6jd"/>
                     <constraint firstAttribute="bottom" secondItem="pue-pe-Mkp" secondAttribute="bottom" constant="19" id="mHx-A1-HS1"/>
                     <constraint firstItem="pue-pe-Mkp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="zd2-VK-iuL"/>

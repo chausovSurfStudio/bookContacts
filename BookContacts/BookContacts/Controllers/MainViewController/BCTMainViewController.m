@@ -9,6 +9,7 @@
 #import "BCTMainViewController.h"
 #import "BCTSearchTableViewCell.h"
 #import "BCTContactTableViewCell.h"
+#import "BCTThemeConstant.h"
 
 #import "BCTDataBaseManager.h"
 #import "BCTContact.h"
@@ -34,7 +35,14 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
     [self configureNavigationBar];
     [self configureTableView];
     
+    [self configureStyle];
+    
     self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
+}
+
+- (void)configureStyle {
+    self.view.backgroundColor = mainBackgroundThemeNrmColor;
+    self.tableView.backgroundColor = mainBackgroundThemeNrmColor;
 }
 
 - (void)configureNavigationBar {
@@ -99,6 +107,24 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.0;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.tableView endEditing:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.tableView endEditing:YES];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BCTContactTableViewCell.h"
+#import "BCTThemeConstant.h"
 
 @interface BCTContactTableViewCell()
 
@@ -21,6 +22,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.contentView.backgroundColor = mainBackgroundThemeNrmColor;
+    self.fullNameLabel.textColor = extraTextNrmColor;
+    self.phoneNumberLabel.textColor = mainTextNrmColor;
+    self.separatorView.backgroundColor = separatorColor;
 }
 
 - (void)configureWithFullName:(NSString *)fullName phone:(NSString *)phone likedFlag:(BOOL)likedFlag {
@@ -29,8 +34,16 @@
     self.likedButton.hidden = !likedFlag;
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    self.contentView.backgroundColor = highlighted ? mainBackgroundThemePrsColor : mainBackgroundThemeNrmColor;
+    self.fullNameLabel.textColor = highlighted ? extraTextPrsColor : extraTextNrmColor;
+    self.phoneNumberLabel.textColor = highlighted ? mainTextPrsColor : mainTextNrmColor;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    self.contentView.backgroundColor = selected ? mainBackgroundThemePrsColor : mainBackgroundThemeNrmColor;
+    self.fullNameLabel.textColor = selected ? extraTextPrsColor : extraTextNrmColor;
+    self.phoneNumberLabel.textColor = selected ? mainTextPrsColor : mainTextNrmColor;
 }
 
 @end

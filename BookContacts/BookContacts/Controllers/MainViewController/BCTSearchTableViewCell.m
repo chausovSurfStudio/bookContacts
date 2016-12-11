@@ -7,6 +7,8 @@
 //
 
 #import "BCTSearchTableViewCell.h"
+#import "BCTThemeConstant.h"
+#import "UIImage+Additions.h"
 
 @interface BCTSearchTableViewCell()
 
@@ -20,13 +22,30 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.contentView.backgroundColor = mainBackgroundThemeNrmColor;
+    self.separatorView.backgroundColor = separatorColor;
+    [self configureTextFieldStyle];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)configureTextFieldStyle {
+    NSString *placeholder = @"Поиск контакта";
+    NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{
+                                                                                                                    NSFontAttributeName:[UIFont systemFontOfSize:17],
+                                                                                                                    NSForegroundColorAttributeName:mainTextNrmColor
+                                                                                                                    }];
+    self.textField.attributedPlaceholder = attributedPlaceholder;
+    self.textField.textColor = mainTextNrmColor;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[[UIImage imageNamed:@"ic_clear.png"] imageByApplyingAlpha:0.8] forState:UIControlStateNormal];
+    [button setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+    [button addTarget:self action:@selector(clearTextField) forControlEvents:UIControlEventTouchUpInside];
+    self.textField.rightView = button;
+    self.textField.rightViewMode = UITextFieldViewModeWhileEditing;
+}
 
-    // Configure the view for the selected state
+- (void)clearTextField {
+    self.textField.text = @"";
 }
 
 @end

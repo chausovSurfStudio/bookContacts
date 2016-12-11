@@ -28,6 +28,10 @@
 		180CFDF21DFD7DE10042A270 /* ic_pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDE91DFD7DE10042A270 /* ic_pencil.png */; };
 		180CFDF31DFD7DE10042A270 /* ic_pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDEA1DFD7DE10042A270 /* ic_pencil@2x.png */; };
 		180CFDF41DFD7DE10042A270 /* ic_pencil@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDEB1DFD7DE10042A270 /* ic_pencil@3x.png */; };
+		180CFDF81DFD88C70042A270 /* ic_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDF51DFD88C70042A270 /* ic_clear.png */; };
+		180CFDF91DFD88C70042A270 /* ic_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDF61DFD88C70042A270 /* ic_clear@2x.png */; };
+		180CFDFA1DFD88C70042A270 /* ic_clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDF71DFD88C70042A270 /* ic_clear@3x.png */; };
+		180CFDFE1DFD89480042A270 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDFD1DFD89480042A270 /* UIImage+Additions.m */; };
 		18A86FE71DEB21DC00B6439E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE61DEB21DC00B6439E /* main.m */; };
 		18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE91DEB21DC00B6439E /* AppDelegate.m */; };
 		18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FEC1DEB21DC00B6439E /* ViewController.m */; };
@@ -91,6 +95,11 @@
 		180CFDE91DFD7DE10042A270 /* ic_pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_pencil.png; path = Resources/icon/ic_pencil.png; sourceTree = "<group>"; };
 		180CFDEA1DFD7DE10042A270 /* ic_pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_pencil@2x.png"; path = "Resources/icon/ic_pencil@2x.png"; sourceTree = "<group>"; };
 		180CFDEB1DFD7DE10042A270 /* ic_pencil@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_pencil@3x.png"; path = "Resources/icon/ic_pencil@3x.png"; sourceTree = "<group>"; };
+		180CFDF51DFD88C70042A270 /* ic_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_clear.png; path = Resources/icon/ic_clear.png; sourceTree = "<group>"; };
+		180CFDF61DFD88C70042A270 /* ic_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_clear@2x.png"; path = "Resources/icon/ic_clear@2x.png"; sourceTree = "<group>"; };
+		180CFDF71DFD88C70042A270 /* ic_clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_clear@3x.png"; path = "Resources/icon/ic_clear@3x.png"; sourceTree = "<group>"; };
+		180CFDFC1DFD89480042A270 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Additions.h"; path = "Extensions/UIImage+Additions/UIImage+Additions.h"; sourceTree = "<group>"; };
+		180CFDFD1DFD89480042A270 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Additions.m"; path = "Extensions/UIImage+Additions/UIImage+Additions.m"; sourceTree = "<group>"; };
 		18A86FE21DEB21DC00B6439E /* BookContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A86FE61DEB21DC00B6439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A86FE81DEB21DC00B6439E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +189,9 @@
 				180CFDE31DFD7DE10042A270 /* ic_add.png */,
 				180CFDE41DFD7DE10042A270 /* ic_add@2x.png */,
 				180CFDE51DFD7DE10042A270 /* ic_add@3x.png */,
+				180CFDF51DFD88C70042A270 /* ic_clear.png */,
+				180CFDF61DFD88C70042A270 /* ic_clear@2x.png */,
+				180CFDF71DFD88C70042A270 /* ic_clear@3x.png */,
 				180CFDE61DFD7DE10042A270 /* ic_heart.png */,
 				180CFDE71DFD7DE10042A270 /* ic_heart@2x.png */,
 				180CFDE81DFD7DE10042A270 /* ic_heart@3x.png */,
@@ -188,6 +200,24 @@
 				180CFDEB1DFD7DE10042A270 /* ic_pencil@3x.png */,
 			);
 			name = icon;
+			sourceTree = "<group>";
+		};
+		180CFDFB1DFD893C0042A270 /* UIImage+Additions */ = {
+			isa = PBXGroup;
+			children = (
+				180CFDFC1DFD89480042A270 /* UIImage+Additions.h */,
+				180CFDFD1DFD89480042A270 /* UIImage+Additions.m */,
+			);
+			name = "UIImage+Additions";
+			sourceTree = "<group>";
+		};
+		180CFDFF1DFD894C0042A270 /* NSString+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				180CFDD91DFD69FB0042A270 /* NSString+Extension.h */,
+				180CFDDA1DFD69FB0042A270 /* NSString+Extension.m */,
+			);
+			name = "NSString+Extension";
 			sourceTree = "<group>";
 		};
 		18A86FD91DEB21DC00B6439E = {
@@ -271,8 +301,8 @@
 		18A8701C1DEB220B00B6439E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				180CFDD91DFD69FB0042A270 /* NSString+Extension.h */,
-				180CFDDA1DFD69FB0042A270 /* NSString+Extension.m */,
+				180CFDFF1DFD894C0042A270 /* NSString+Extension */,
+				180CFDFB1DFD893C0042A270 /* UIImage+Additions */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180CFDF11DFD7DE10042A270 /* ic_heart@3x.png in Resources */,
+				180CFDF81DFD88C70042A270 /* ic_clear.png in Resources */,
 				18A86FF81DEB21DC00B6439E /* LaunchScreen.storyboard in Resources */,
 				180CFDA41DFD50770042A270 /* BCTSearchTableViewCell.xib in Resources */,
 				180CFDF21DFD7DE10042A270 /* ic_pencil.png in Resources */,
@@ -443,12 +474,14 @@
 				180CFDEF1DFD7DE10042A270 /* ic_heart.png in Resources */,
 				180CFDEC1DFD7DE10042A270 /* ic_add.png in Resources */,
 				180CFDEE1DFD7DE10042A270 /* ic_add@3x.png in Resources */,
+				180CFDFA1DFD88C70042A270 /* ic_clear@3x.png in Resources */,
 				18A86FF51DEB21DC00B6439E /* Assets.xcassets in Resources */,
 				180CFDF41DFD7DE10042A270 /* ic_pencil@3x.png in Resources */,
 				180CFDF31DFD7DE10042A270 /* ic_pencil@2x.png in Resources */,
 				18A86FF01DEB21DC00B6439E /* Main.storyboard in Resources */,
 				180CFDE01DFD72C40042A270 /* BCTContactTableViewCell.xib in Resources */,
 				180CFDED1DFD7DE10042A270 /* ic_add@2x.png in Resources */,
+				180CFDF91DFD88C70042A270 /* ic_clear@2x.png in Resources */,
 				180CFD9F1DFD4F330042A270 /* BCTMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +568,7 @@
 				18A86FE71DEB21DC00B6439E /* main.m in Sources */,
 				180CFDA31DFD50770042A270 /* BCTSearchTableViewCell.m in Sources */,
 				18A86FF31DEB21DC00B6439E /* BookContacts.xcdatamodeld in Sources */,
+				180CFDFE1DFD89480042A270 /* UIImage+Additions.m in Sources */,
 				180CFD9E1DFD4F330042A270 /* BCTMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
