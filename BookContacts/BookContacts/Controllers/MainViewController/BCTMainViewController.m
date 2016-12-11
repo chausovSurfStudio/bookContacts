@@ -8,10 +8,16 @@
 
 #import "BCTMainViewController.h"
 #import "BCTSearchTableViewCell.h"
+#import "BCTContactTableViewCell.h"
 
 #import "BCTDataBaseManager.h"
 #import "BCTContact.h"
 #import "BCTPhoneNumber.h"
+
+#import "NSString+Extension.h"
+
+static NSString *const searchCellReuseIdentifier = @"searchCellReuseIdentifier";
+static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier";
 
 @interface BCTMainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -31,7 +37,8 @@
 }
 
 - (void)configureTableView {
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BCTSearchTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"asdf"];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BCTSearchTableViewCell class]) bundle:nil] forCellReuseIdentifier:searchCellReuseIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BCTContactTableViewCell class]) bundle:nil] forCellReuseIdentifier:contactCellReuseIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -48,7 +55,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BCTSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"asdf"];
+    if (indexPath.section == 0) {
+        BCTSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:searchCellReuseIdentifier];
+        return cell;
+    }
+    if (indexPath.section == 1) {
+        BCTContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:contactCellReuseIdentifier];
+        BCTContact *contact = self.contacts[indexPath.row];
+        NSString *fullName = contact.name;
+        if ([contact.surname notEmpty]) {
+            fullName = [fullName stringByAppendingString:[NSString stringWithFormat:@" %@", contact.surname]];
+        }
+        [cell configureWithFullName:fullName phone:contact.mainPhoneNumber.phoneNumber likedFlag:contact.liked];
+        return cell;
+    }
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
     return cell;
 }
 

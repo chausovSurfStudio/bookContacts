@@ -62,6 +62,12 @@
                     <constraint firstItem="3WO-d4-8Ag" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tu1-4q-vRy"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="clearButton" destination="xyn-vJ-LTv" id="9No-kv-pTg"/>
+                <outlet property="likedButton" destination="3WO-d4-8Ag" id="Jz4-zR-Pb6"/>
+                <outlet property="separatorView" destination="6vw-wy-fkI" id="NB4-fG-7cE"/>
+                <outlet property="textField" destination="N8b-vH-EPi" id="bnL-Rl-tql"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

@@ -13,6 +13,8 @@
 #import "BCTContact.h"
 #import "BCTPhoneNumber.h"
 
+#import "NSString+Extension.h"
+
 @implementation BCTDataBaseManager
 
 + (instancetype)sharedInstance {
@@ -27,13 +29,40 @@
 }
 
 - (NSArray <BCTContact *> *)findAndSortAllContacts {
-    NSManagedObjectContext *context = [AppDelegate appDelegate].managedObjectContext;
-    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-    [fetch setEntity:[NSEntityDescription entityForName:@"BCTContact" inManagedObjectContext:context]];
-    NSArray <BCTContact *> *result = [context executeFetchRequest:fetch error:nil];
+    NSArray *allContacts = [BCTContact MR_findAll];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSArray *sortedResult = [result sortedArrayUsingDescriptors:@[sortDescriptor]];
-    return sortedResult;
+    NSArray *sortedContacts = [allContacts sortedArrayUsingDescriptors:@[sortDescriptor]];
+    return sortedContacts;
+}
+
+- (void)createContactWithName:(NSString *)name
+                              surname:(NSString *)surname
+                      mainPhoneNumber:(NSString *)mainPhoneNumber
+                     addedPhoneNumber:(NSString *)addedPhoneNumber
+                            likedFlag:(BOOL)likedFlag {
+    if (![name notEmpty] || ![mainPhoneNumber notEmpty]) {
+        // сущность контакта не может быть создана без обязательных полей
+        return;
+    }
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        BCTContact *contact = [BCTContact MR_createEntityInContext:localContext];
+        contact.name = name;
+        contact.surname = surname;
+        contact.liked = [NSNumber numberWithBool:likedFlag];
+        
+        BCTPhoneNumber *mainPhoneNumberEntity = [BCTPhoneNumber MR_createEntityInContext:localContext];
+        mainPhoneNumberEntity.phoneNumber = mainPhoneNumber;
+        contact.mainPhoneNumber = mainPhoneNumberEntity;
+        
+        if ([addedPhoneNumber notEmpty]) {
+            BCTPhoneNumber *addedPhoneNumberEntity = [BCTPhoneNumber MR_createEntityInContext:localContext];
+            addedPhoneNumberEntity.phoneNumber = addedPhoneNumber;
+            [contact addAddedPhoneNumbersObject:addedPhoneNumberEntity];
+        }
+        [localContext MR_saveToPersistentStoreAndWait];
+    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+        
+    }];
 }
 
 @end

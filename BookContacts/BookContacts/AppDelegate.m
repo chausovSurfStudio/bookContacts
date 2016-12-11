@@ -11,6 +11,7 @@
 #import "BCTMainViewController.h"
 
 #import <MagicalRecord/MagicalRecord.h>
+#import "BCTDataBaseManager.h"
 
 static AppDelegate *instance;
 

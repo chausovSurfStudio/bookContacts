@@ -18,17 +18,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *surname;
 @property (nullable, nonatomic, retain) NSNumber *liked;
-@property (nullable, nonatomic, retain) NSManagedObject *mainPhoneNumber;
-@property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *addedPhoneNumbers;
+@property (nullable, nonatomic, retain) BCTPhoneNumber *mainPhoneNumber;
+@property (nullable, nonatomic, retain) NSSet<BCTPhoneNumber *> *addedPhoneNumbers;
 
 @end
 
 @interface BCTContact (CoreDataGeneratedAccessors)
 
-- (void)addAddedPhoneNumbersObject:(NSManagedObject *)value;
-- (void)removeAddedPhoneNumbersObject:(NSManagedObject *)value;
-- (void)addAddedPhoneNumbers:(NSSet<NSManagedObject *> *)values;
-- (void)removeAddedPhoneNumbers:(NSSet<NSManagedObject *> *)values;
+- (void)addAddedPhoneNumbersObject:(BCTPhoneNumber *)value;
+- (void)removeAddedPhoneNumbersObject:(BCTPhoneNumber *)value;
+- (void)addAddedPhoneNumbers:(NSSet<BCTPhoneNumber *> *)values;
+- (void)removeAddedPhoneNumbers:(NSSet<BCTPhoneNumber *> *)values;
 
 @end
 

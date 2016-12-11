@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class BCTPhoneNumber;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BCTContact : NSManagedObject
