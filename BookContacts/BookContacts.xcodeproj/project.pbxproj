@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CFD9E1DFD4F330042A270 /* BCTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFD9C1DFD4F330042A270 /* BCTMainViewController.m */; };
+		180CFD9F1DFD4F330042A270 /* BCTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CFD9D1DFD4F330042A270 /* BCTMainViewController.xib */; };
+		180CFDA31DFD50770042A270 /* BCTSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDA11DFD50770042A270 /* BCTSearchTableViewCell.m */; };
+		180CFDA41DFD50770042A270 /* BCTSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */; };
 		18A86FE71DEB21DC00B6439E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE61DEB21DC00B6439E /* main.m */; };
 		18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE91DEB21DC00B6439E /* AppDelegate.m */; };
 		18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FEC1DEB21DC00B6439E /* ViewController.m */; };
@@ -37,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180CFD951DFD49EB0042A270 /* BCTConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BCTConstant.h; path = Utils/BCTConstant.h; sourceTree = "<group>"; };
+		180CFD961DFD49FF0042A270 /* BCTThemeConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCTThemeConstant.h; sourceTree = "<group>"; };
+		180CFD9B1DFD4F330042A270 /* BCTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTMainViewController.h; path = Controllers/MainViewController/BCTMainViewController.h; sourceTree = "<group>"; };
+		180CFD9C1DFD4F330042A270 /* BCTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTMainViewController.m; path = Controllers/MainViewController/BCTMainViewController.m; sourceTree = "<group>"; };
+		180CFD9D1DFD4F330042A270 /* BCTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BCTMainViewController.xib; path = Controllers/MainViewController/BCTMainViewController.xib; sourceTree = "<group>"; };
+		180CFDA01DFD50770042A270 /* BCTSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTSearchTableViewCell.h; path = Controllers/MainViewController/BCTSearchTableViewCell.h; sourceTree = "<group>"; };
+		180CFDA11DFD50770042A270 /* BCTSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTSearchTableViewCell.m; path = Controllers/MainViewController/BCTSearchTableViewCell.m; sourceTree = "<group>"; };
+		180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BCTSearchTableViewCell.xib; path = Controllers/MainViewController/BCTSearchTableViewCell.xib; sourceTree = "<group>"; };
 		18A86FE21DEB21DC00B6439E /* BookContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A86FE61DEB21DC00B6439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A86FE81DEB21DC00B6439E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +95,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180CFD971DFD4A2C0042A270 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				180CFD9B1DFD4F330042A270 /* BCTMainViewController.h */,
+				180CFD9C1DFD4F330042A270 /* BCTMainViewController.m */,
+				180CFD9D1DFD4F330042A270 /* BCTMainViewController.xib */,
+				180CFDA01DFD50770042A270 /* BCTSearchTableViewCell.h */,
+				180CFDA11DFD50770042A270 /* BCTSearchTableViewCell.m */,
+				180CFDA21DFD50770042A270 /* BCTSearchTableViewCell.xib */,
+			);
+			name = MainViewController;
+			sourceTree = "<group>";
+		};
 		18A86FD91DEB21DC00B6439E = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +178,7 @@
 		18A8701B1DEB220400B6439E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				180CFD971DFD4A2C0042A270 /* MainViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				18A8701F1DEB22AF00B6439E /* BCTValidator */,
+				180CFD951DFD49EB0042A270 /* BCTConstant.h */,
+				180CFD961DFD49FF0042A270 /* BCTThemeConstant.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -292,8 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A86FF81DEB21DC00B6439E /* LaunchScreen.storyboard in Resources */,
+				180CFDA41DFD50770042A270 /* BCTSearchTableViewCell.xib in Resources */,
 				18A86FF51DEB21DC00B6439E /* Assets.xcassets in Resources */,
 				18A86FF01DEB21DC00B6439E /* Main.storyboard in Resources */,
+				180CFD9F1DFD4F330042A270 /* BCTMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +352,9 @@
 				18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */,
 				18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */,
 				18A86FE71DEB21DC00B6439E /* main.m in Sources */,
+				180CFDA31DFD50770042A270 /* BCTSearchTableViewCell.m in Sources */,
 				18A86FF31DEB21DC00B6439E /* BookContacts.xcdatamodeld in Sources */,
+				180CFD9E1DFD4F330042A270 /* BCTMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +580,7 @@
 				18A870141DEB21DC00B6439E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18A870151DEB21DC00B6439E /* Build configuration list for PBXNativeTarget "BookContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +589,7 @@
 				18A870171DEB21DC00B6439E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18A870181DEB21DC00B6439E /* Build configuration list for PBXNativeTarget "BookContactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +598,7 @@
 				18A8701A1DEB21DC00B6439E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

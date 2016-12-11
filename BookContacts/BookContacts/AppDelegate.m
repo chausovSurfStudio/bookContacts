@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "BCTMainViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    BCTMainViewController *ctrl = [[BCTMainViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:ctrl];
+    self.window.rootViewController = navigationController;
+    
     return YES;
 }
 
