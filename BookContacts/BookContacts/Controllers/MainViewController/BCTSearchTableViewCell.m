@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIButton *likedButton;
-@property (nonatomic, strong) IBOutlet UIButton *clearButton;
 @property (nonatomic, strong) IBOutlet UIView *separatorView;
 
 @end

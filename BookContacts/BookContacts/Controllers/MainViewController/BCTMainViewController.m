@@ -30,10 +30,25 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Список контактов";
+    
+    [self configureNavigationBar];
     [self configureTableView];
     
     self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
+}
+
+- (void)configureNavigationBar {
+    self.navigationItem.title = @"Список контактов";
+    
+    UIImage *image = [UIImage imageNamed:@"ic_add.png"];
+    CGRect imgFrame = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIButton *button = [[UIButton alloc] initWithFrame:imgFrame];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(addContact) forControlEvents:UIControlEventTouchUpInside];
+    [button setShowsTouchWhenHighlighted:YES];
+    
+    UIBarButtonItem *addContactButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = addContactButton;
 }
 
 - (void)configureTableView {
@@ -43,6 +58,10 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
     self.tableView.dataSource = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (void)addContact {
+    
 }
 
 #pragma mark - UITableViewDataSource
