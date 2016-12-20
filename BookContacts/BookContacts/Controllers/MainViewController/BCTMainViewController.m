@@ -10,6 +10,7 @@
 #import "BCTSearchTableViewCell.h"
 #import "BCTContactTableViewCell.h"
 #import "BCTThemeConstant.h"
+#import "BCTContactViewController.h"
 
 #import "BCTDataBaseManager.h"
 #import "BCTContact.h"
@@ -69,7 +70,8 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 }
 
 - (void)addContact {
-    
+    BCTContactViewController *ctrl = [[BCTContactViewController alloc] init];
+    [self.navigationController pushViewController:ctrl animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -119,6 +121,9 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BCTContact *contact = self.contacts[indexPath.row];
+    BCTContactViewController *ctrl = [[BCTContactViewController alloc] initWithContact:contact];
+    [self.navigationController pushViewController:ctrl animated:YES];
     [self.tableView endEditing:YES];
 }
 

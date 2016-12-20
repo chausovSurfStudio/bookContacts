@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "BCTMainViewController.h"
+#import "BCTThemeConstant.h"
 
 #import <MagicalRecord/MagicalRecord.h>
 #import "BCTDataBaseManager.h"
@@ -28,6 +29,11 @@ static AppDelegate *instance;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [MagicalRecord setupCoreDataStack];
+    
+    [[UINavigationBar appearance] setBarTintColor:extraTextNrmColor];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     BCTMainViewController *ctrl = [[BCTMainViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:ctrl];
