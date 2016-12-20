@@ -20,3 +20,6 @@
 #define extraTextPrsColor           [UIColor colorWithRed:255/255.0 green:181/255.0 blue:20/255.0 alpha:0.8]
 
 #define separatorColor              [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0]
+
+#define alertErrorColor             [UIColor colorWithRed:199./255 green:30./255 blue:30./255 alpha:0.9]
+#define alertInfoColor              [UIColor colorWithRed:54./255 green:210./255 blue:159./255 alpha:1.0]

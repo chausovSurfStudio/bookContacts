@@ -9,3 +9,7 @@
 #ifndef BCTConstant_h
 #define BCTConstant_h
 #endif /* BCTConstant_h */
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+
+static NSInteger const NAVIGATION_BAR_HEIGHT = 64;

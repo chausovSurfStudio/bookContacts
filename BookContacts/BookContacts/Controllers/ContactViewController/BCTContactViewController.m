@@ -10,6 +10,8 @@
 #import "RPFloatingPlaceholderTextField.h"
 #import "BCTThemeConstant.h"
 #import "FrameAccessor.h"
+#import "AlertViewController.h"
+#import "BCTValidator.h"
 
 #import "BCTDataBaseManager.h"
 #import "BCTContact.h"
@@ -59,7 +61,10 @@
         self.nameTextField.text = self.contact.name;
         self.surnameTextField.text = self.contact.surname;
         self.phoneTextField.text = self.contact.mainPhoneNumber.phoneNumber;
-        self.extraPhoneTextField.text = @"Заглушка, не нажимать";
+        BCTPhoneNumber *extraPhone = [[self.contact.addedPhoneNumbers allObjects] firstObject];
+        if (extraPhone) {
+            self.extraPhoneTextField.text = extraPhone.phoneNumber;
+        }
     }
 }
 
@@ -80,6 +85,59 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
+}
+
+#pragma mark - Action
+- (IBAction)saveButtonPress:(UIButton *)sender {
+    [self saveAction];
+}
+
+- (void)saveAction {
+    BOOL validField = [self validateFieldAndShowError];
+    if (validField) {
+        NSString *name = [[BCTValidator sharedInstance] validateContactName:self.nameTextField.text];
+        NSString *surname = [[BCTValidator sharedInstance] validateContactName:self.surnameTextField.text];
+        NSString *mainPhone = self.phoneTextField.text;
+        NSString *extraPhone = self.extraPhoneTextField.text;
+        [[BCTDataBaseManager sharedInstance] createContactWithName:name
+                                                           surname:surname
+                                                   mainPhoneNumber:mainPhone
+                                                  addedPhoneNumber:extraPhone
+                                                         likedFlag:self.likedSwitch.on];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (BOOL)validateFieldAndShowError {
+    NSString *error = @"";
+    if (self.nameTextField.text.length > 0) {
+        if (![[BCTValidator sharedInstance] validateContactName:self.nameTextField.text]) {
+            error = [error stringByAppendingString:@"Проверьте имя (от 1 до 15 символов)\n"];
+        }
+    } else {
+        error = [error stringByAppendingString:@"Имя должно быть обязательно указано!\n"];
+    }
+    
+    if (self.surnameTextField.text.length > 0) {
+        if (![[BCTValidator sharedInstance] validatePhoneNumber:self.phoneTextField.text]) {
+            error = [error stringByAppendingString:@"Неверный номер телефона\n"];
+        }
+    } else {
+        error = [error stringByAppendingString:@"Номер телефона должен быть обязательно указан!\n"];
+    }
+    
+    if (self.surnameTextField.text.length > 0 && ![[BCTValidator sharedInstance] validateContactSurname:self.surnameTextField.text]) {
+        error = [error stringByAppendingString:@"Проверьте фамилию (от 3 до 20 символов)\n"];
+    }
+    
+    if (self.extraPhoneTextField.text.length > 0 && ![[BCTValidator sharedInstance] validatePhoneNumber:self.extraPhoneTextField.text]) {
+        error = [error stringByAppendingString:@"Неверный дополнительный номер телефона"];
+    }
+    
+    if (error.length > 0) {
+        [[AlertViewController sharedInstance] showErrorAlert:error animation:YES autoHide:YES];
+    }
+    return error.length > 0 ? NO : YES;
 }
 
 @end

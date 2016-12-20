@@ -22,4 +22,6 @@
              addedPhoneNumber:(NSString *)addedPhoneNumber
                     likedFlag:(BOOL)likedFlag;
 
+- (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber;
+
 @end

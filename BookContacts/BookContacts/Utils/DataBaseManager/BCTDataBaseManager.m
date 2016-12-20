@@ -65,4 +65,10 @@
     }];
 }
 
+- (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"phoneNumber == %@", phoneNumber];
+    NSArray *phones = [BCTPhoneNumber MR_findAllWithPredicate:predicate];
+    return phones.count > 0 ? NO : YES;
+}
+
 @end

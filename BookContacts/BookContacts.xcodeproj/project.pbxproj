@@ -37,6 +37,10 @@
 		184AB9131E098F020094A6DD /* RPFloatingPlaceholderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AB90C1E098F020094A6DD /* RPFloatingPlaceholderTextField.m */; };
 		184AB9161E098F020094A6DD /* RPFloatingPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AB9121E098F020094A6DD /* RPFloatingPlaceholderTextView.m */; };
 		184AB91A1E099B0C0094A6DD /* UIButton+CustomStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AB9191E099B0C0094A6DD /* UIButton+CustomStyle.m */; };
+		184AB91F1E09A7C20094A6DD /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AB91D1E09A7C20094A6DD /* AlertViewController.m */; };
+		184AB9201E09A7C20094A6DD /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184AB91E1E09A7C20094A6DD /* AlertViewController.xib */; };
+		184AB9231E09A90F0094A6DD /* ic_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184AB9211E09A90F0094A6DD /* ic_alert@2x.png */; };
+		184AB9241E09A90F0094A6DD /* ic_alert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184AB9221E09A90F0094A6DD /* ic_alert@3x.png */; };
 		18A86FE71DEB21DC00B6439E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE61DEB21DC00B6439E /* main.m */; };
 		18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE91DEB21DC00B6439E /* AppDelegate.m */; };
 		18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FEC1DEB21DC00B6439E /* ViewController.m */; };
@@ -115,6 +119,11 @@
 		184AB9121E098F020094A6DD /* RPFloatingPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPFloatingPlaceholderTextView.m; path = Utils/RPFloatingPlaceholderTextField/RPFloatingPlaceholderTextView.m; sourceTree = "<group>"; };
 		184AB9181E099B0C0094A6DD /* UIButton+CustomStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+CustomStyle.h"; path = "Extensions/UIButton+CustomStyle/UIButton+CustomStyle.h"; sourceTree = "<group>"; };
 		184AB9191E099B0C0094A6DD /* UIButton+CustomStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+CustomStyle.m"; path = "Extensions/UIButton+CustomStyle/UIButton+CustomStyle.m"; sourceTree = "<group>"; };
+		184AB91C1E09A7C20094A6DD /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertViewController.h; path = Utils/AlertViewController/AlertViewController.h; sourceTree = "<group>"; };
+		184AB91D1E09A7C20094A6DD /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertViewController.m; path = Utils/AlertViewController/AlertViewController.m; sourceTree = "<group>"; };
+		184AB91E1E09A7C20094A6DD /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlertViewController.xib; path = Utils/AlertViewController/AlertViewController.xib; sourceTree = "<group>"; };
+		184AB9211E09A90F0094A6DD /* ic_alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_alert@2x.png"; path = "Resources/icon/ic_alert@2x.png"; sourceTree = "<group>"; };
+		184AB9221E09A90F0094A6DD /* ic_alert@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_alert@3x.png"; path = "Resources/icon/ic_alert@3x.png"; sourceTree = "<group>"; };
 		18A86FE21DEB21DC00B6439E /* BookContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A86FE61DEB21DC00B6439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A86FE81DEB21DC00B6439E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,6 +222,8 @@
 				180CFDE91DFD7DE10042A270 /* ic_pencil.png */,
 				180CFDEA1DFD7DE10042A270 /* ic_pencil@2x.png */,
 				180CFDEB1DFD7DE10042A270 /* ic_pencil@3x.png */,
+				184AB9211E09A90F0094A6DD /* ic_alert@2x.png */,
+				184AB9221E09A90F0094A6DD /* ic_alert@3x.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -264,6 +275,16 @@
 				184AB9191E099B0C0094A6DD /* UIButton+CustomStyle.m */,
 			);
 			name = "UIButton+CustomStyle";
+			sourceTree = "<group>";
+		};
+		184AB91B1E09A7B60094A6DD /* AlertViewController */ = {
+			isa = PBXGroup;
+			children = (
+				184AB91C1E09A7C20094A6DD /* AlertViewController.h */,
+				184AB91D1E09A7C20094A6DD /* AlertViewController.m */,
+				184AB91E1E09A7C20094A6DD /* AlertViewController.xib */,
+			);
+			name = AlertViewController;
 			sourceTree = "<group>";
 		};
 		18A86FD91DEB21DC00B6439E = {
@@ -373,6 +394,7 @@
 		18A8701E1DEB222100B6439E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				184AB91B1E09A7B60094A6DD /* AlertViewController */,
 				184AB9001E098D170094A6DD /* RPFloatingPlaceholderTextField */,
 				180CFDA51DFD5A6E0042A270 /* DataBaseManager */,
 				18A8701F1DEB22AF00B6439E /* BCTValidator */,
@@ -515,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180CFDF11DFD7DE10042A270 /* ic_heart@3x.png in Resources */,
+				184AB9231E09A90F0094A6DD /* ic_alert@2x.png in Resources */,
 				180CFDF81DFD88C70042A270 /* ic_clear.png in Resources */,
 				18A86FF81DEB21DC00B6439E /* LaunchScreen.storyboard in Resources */,
 				180CFDA41DFD50770042A270 /* BCTSearchTableViewCell.xib in Resources */,
@@ -525,6 +548,7 @@
 				180CFDEE1DFD7DE10042A270 /* ic_add@3x.png in Resources */,
 				180CFDFA1DFD88C70042A270 /* ic_clear@3x.png in Resources */,
 				18A86FF51DEB21DC00B6439E /* Assets.xcassets in Resources */,
+				184AB9241E09A90F0094A6DD /* ic_alert@3x.png in Resources */,
 				180CFDF41DFD7DE10042A270 /* ic_pencil@3x.png in Resources */,
 				184AB9091E098D880094A6DD /* BCTContactViewController.xib in Resources */,
 				180CFDF31DFD7DE10042A270 /* ic_pencil@2x.png in Resources */,
@@ -533,6 +557,7 @@
 				180CFDED1DFD7DE10042A270 /* ic_add@2x.png in Resources */,
 				180CFDF91DFD88C70042A270 /* ic_clear@2x.png in Resources */,
 				180CFD9F1DFD4F330042A270 /* BCTMainViewController.xib in Resources */,
+				184AB9201E09A7C20094A6DD /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +641,7 @@
 				180CFDDB1DFD69FB0042A270 /* NSString+Extension.m in Sources */,
 				180CFDD61DFD64470042A270 /* BCTContact.m in Sources */,
 				18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */,
+				184AB91F1E09A7C20094A6DD /* AlertViewController.m in Sources */,
 				184AB9081E098D880094A6DD /* BCTContactViewController.m in Sources */,
 				18A86FE71DEB21DC00B6439E /* main.m in Sources */,
 				184AB9131E098F020094A6DD /* RPFloatingPlaceholderTextField.m in Sources */,

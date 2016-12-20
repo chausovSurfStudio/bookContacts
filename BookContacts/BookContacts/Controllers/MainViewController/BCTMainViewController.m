@@ -37,8 +37,12 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
     [self configureTableView];
     
     [self configureStyle];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
+    [self.tableView reloadData];
 }
 
 - (void)configureStyle {
