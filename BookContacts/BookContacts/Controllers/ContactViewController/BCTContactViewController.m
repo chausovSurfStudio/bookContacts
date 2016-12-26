@@ -88,7 +88,34 @@
 
 #pragma mark - Action
 - (IBAction)saveButtonPress:(UIButton *)sender {
-    [self saveAction];
+    if (self.contact) {
+        [self editAction];
+    } else {
+        [self saveAction];
+    }
+}
+
+- (void)editAction {
+    BOOL validField = [self validateFieldAndShowError];
+    if (validField) {
+        NSString *name = [[BCTValidator sharedInstance] validateContactName:self.nameTextField.text];
+        NSString *surname = [[BCTValidator sharedInstance] validateContactName:self.surnameTextField.text];
+        NSString *mainPhone = self.phoneTextField.text;
+        NSString *extraPhone = self.extraPhoneTextField.text;
+        [[BCTDataBaseManager sharedInstance] editContact:self.contact
+                                                withName:name
+                                                 surname:surname
+                                         mainPhoneNumber:mainPhone
+                                        addedPhoneNumber:extraPhone
+                                               likedFlag:self.likedSwitch.on
+                                              completion:^(BOOL success) {
+                                                  if (success) {
+                                                      [self.navigationController popViewControllerAnimated:YES];
+                                                  } else {
+                                                      [[AlertViewController sharedInstance] showErrorAlert:@"Произошла ошибка, попробуйте еще раз!" animation:YES autoHide:YES];
+                                                  };
+                                              }];
+    }
 }
 
 - (void)saveAction {
@@ -137,6 +164,26 @@
     
     if (self.extraPhoneTextField.text.length > 0 && ![[BCTValidator sharedInstance] validatePhoneNumber:self.extraPhoneTextField.text]) {
         error = [error stringByAppendingString:@"Неверный дополнительный номер телефона"];
+    }
+    
+    if (!self.contact) {
+        // Случай создания нового контакта
+        if (![[BCTDataBaseManager sharedInstance] checkOnUniquePhoneNumber:self.phoneTextField.text]) {
+            error = [error stringByAppendingString:@"\nОсновной номер телефона уже существует"];
+        }
+        if (![[BCTDataBaseManager sharedInstance] checkOnUniquePhoneNumber:self.extraPhoneTextField.text]) {
+            error = [error stringByAppendingString:@"\nДополнительный номер телефона уже существует"];
+        }
+    } else {
+        // случай редактирования профиля
+        if (![self.contact.mainPhoneNumber isEqualToString:self.phoneTextField.text] &&
+            ![[BCTDataBaseManager sharedInstance] checkOnUniquePhoneNumber:self.phoneTextField.text fromContact:self.contact]) {
+            error = [error stringByAppendingString:@"\nОсновной номер телефона уже существует"];
+        }
+        if (![self.contact.addedPhoneNumber isEqualToString:self.extraPhoneTextField.text] &&
+            ![[BCTDataBaseManager sharedInstance] checkOnUniquePhoneNumber:self.extraPhoneTextField.text fromContact:self.contact]) {
+            error = [error stringByAppendingString:@"\nДополнительный номер телефона уже существует"];
+        }
     }
     
     if (error.length > 0) {

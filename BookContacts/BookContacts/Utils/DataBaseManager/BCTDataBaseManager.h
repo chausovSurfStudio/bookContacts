@@ -23,6 +23,16 @@
                     likedFlag:(BOOL)likedFlag
                    completion:(void(^)(BOOL success))completion;
 
+- (void)editContact:(BCTContact *)contact
+           withName:(NSString *)name
+            surname:(NSString *)surname
+    mainPhoneNumber:(NSString *)mainPhoneNumber
+   addedPhoneNumber:(NSString *)addedPhoneNumber
+          likedFlag:(BOOL)likedFlag
+         completion:(void(^)(BOOL success))completion;
+
 - (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber;
+
+- (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber fromContact:(BCTContact *)contact;
 
 @end
