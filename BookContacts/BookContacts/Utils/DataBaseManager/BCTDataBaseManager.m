@@ -56,7 +56,7 @@
         }
         [localContext MR_saveToPersistentStoreAndWait];
     } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
-        completion(contextDidSave);
+        completion(error ? NO : YES);
     }];
 }
 
