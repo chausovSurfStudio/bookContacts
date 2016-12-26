@@ -105,4 +105,9 @@
     return YES;
 }
 
+- (void)deleteContactFromDB:(BCTContact *)contact {
+    [contact MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 @end

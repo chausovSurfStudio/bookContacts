@@ -16,11 +16,12 @@
 #import "BCTContact.h"
 
 #import "NSString+Extension.h"
+#import <MGSwipeTableCell/MGSwipeTableCell.h>
 
 static NSString *const searchCellReuseIdentifier = @"searchCellReuseIdentifier";
 static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier";
 
-@interface BCTMainViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface BCTMainViewController () <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray <BCTContact *> *contacts;
@@ -40,6 +41,10 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self refreshTable];
+}
+
+- (void)refreshTable {
     self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
     [self.tableView reloadData];
 }
@@ -99,6 +104,7 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
             fullName = [fullName stringByAppendingString:[NSString stringWithFormat:@" %@", contact.surname]];
         }
         [cell configureWithFullName:fullName phone:contact.mainPhoneNumber likedFlag:contact.liked];
+        cell.delegate = self;
         return cell;
     }
     UITableViewCell *cell = [[UITableViewCell alloc] init];
@@ -133,6 +139,19 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.tableView endEditing:YES];
+}
+
+#pragma mark - MGSwipeTableCellDelegate
+- (BOOL)swipeTableCell:(MGSwipeTableCell *)cell canSwipe:(MGSwipeDirection)direction {
+    return direction == MGSwipeDirectionLeftToRight;
+}
+
+- (BOOL)swipeTableCell:(MGSwipeTableCell *)cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    BCTContact *contact = self.contacts[indexPath.row];
+    [[BCTDataBaseManager sharedInstance] deleteContactFromDB:contact];
+    [self refreshTable];
+    return YES;
 }
 
 @end

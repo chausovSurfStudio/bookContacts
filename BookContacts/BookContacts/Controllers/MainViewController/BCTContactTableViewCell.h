@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MGSwipeTableCell/MGSwipeTableCell.h>
 
-@interface BCTContactTableViewCell : UITableViewCell
+@interface BCTContactTableViewCell : MGSwipeTableCell
 
 - (void)configureWithFullName:(NSString *)fullName phone:(NSString *)phone likedFlag:(BOOL)likedFlag;
 

@@ -32,6 +32,9 @@
     self.fullNameLabel.text = fullName;
     self.phoneNumberLabel.text = phone;
     self.likedButton.hidden = !likedFlag;
+    
+    self.leftButtons = @[[MGSwipeButton buttonWithTitle:@"Удалить" icon:nil backgroundColor:[UIColor redColor]]];
+    self.leftSwipeSettings.transition = MGSwipeTransition3D;
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {

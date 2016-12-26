@@ -35,4 +35,6 @@
 
 - (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber fromContact:(BCTContact *)contact;
 
+- (void)deleteContactFromDB:(BCTContact *)contact;
+
 @end
