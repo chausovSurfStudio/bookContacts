@@ -14,7 +14,6 @@
 
 #import "BCTDataBaseManager.h"
 #import "BCTContact.h"
-#import "BCTPhoneNumber.h"
 
 #import "NSString+Extension.h"
 
@@ -99,7 +98,7 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
         if ([contact.surname notEmpty]) {
             fullName = [fullName stringByAppendingString:[NSString stringWithFormat:@" %@", contact.surname]];
         }
-        [cell configureWithFullName:fullName phone:contact.mainPhoneNumber.phoneNumber likedFlag:contact.liked];
+        [cell configureWithFullName:fullName phone:contact.mainPhoneNumber likedFlag:contact.liked];
         return cell;
     }
     UITableViewCell *cell = [[UITableViewCell alloc] init];

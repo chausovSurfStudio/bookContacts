@@ -15,7 +15,6 @@
 
 #import "BCTDataBaseManager.h"
 #import "BCTContact.h"
-#import "BCTPhoneNumber.h"
 
 #import "UIButton+CustomStyle.h"
 
@@ -60,10 +59,10 @@
     if (self.contact) {
         self.nameTextField.text = self.contact.name;
         self.surnameTextField.text = self.contact.surname;
-        self.phoneTextField.text = self.contact.mainPhoneNumber.phoneNumber;
-        BCTPhoneNumber *extraPhone = [[self.contact.addedPhoneNumbers allObjects] firstObject];
+        self.phoneTextField.text = self.contact.mainPhoneNumber;
+        NSString *extraPhone = self.contact.addedPhoneNumber;
         if (extraPhone) {
-            self.extraPhoneTextField.text = extraPhone.phoneNumber;
+            self.extraPhoneTextField.text = extraPhone;
         }
     }
 }
@@ -103,8 +102,14 @@
                                                            surname:surname
                                                    mainPhoneNumber:mainPhone
                                                   addedPhoneNumber:extraPhone
-                                                         likedFlag:self.likedSwitch.on];
-        [self.navigationController popViewControllerAnimated:YES];
+                                                         likedFlag:self.likedSwitch.on
+                                                        completion:^(BOOL success) {
+                                                            if (success) {
+                                                                [self.navigationController popViewControllerAnimated:YES];
+                                                            } else {
+                                                                [[AlertViewController sharedInstance] showErrorAlert:@"Произошла ошибка, попробуйте еще раз!" animation:YES autoHide:YES];
+                                                            }
+                                                        }];
     }
 }
 
@@ -118,7 +123,7 @@
         error = [error stringByAppendingString:@"Имя должно быть обязательно указано!\n"];
     }
     
-    if (self.surnameTextField.text.length > 0) {
+    if (self.phoneTextField.text.length > 0) {
         if (![[BCTValidator sharedInstance] validatePhoneNumber:self.phoneTextField.text]) {
             error = [error stringByAppendingString:@"Неверный номер телефона\n"];
         }

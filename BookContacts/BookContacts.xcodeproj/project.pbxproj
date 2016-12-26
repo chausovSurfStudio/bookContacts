@@ -14,8 +14,6 @@
 		180CFDA81DFD5A9F0042A270 /* BCTDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDA71DFD5A9F0042A270 /* BCTDataBaseManager.m */; };
 		180CFDD51DFD64470042A270 /* BCTContact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDCE1DFD64470042A270 /* BCTContact+CoreDataProperties.m */; };
 		180CFDD61DFD64470042A270 /* BCTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDD01DFD64470042A270 /* BCTContact.m */; };
-		180CFDD71DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDD21DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m */; };
-		180CFDD81DFD64470042A270 /* BCTPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDD41DFD64470042A270 /* BCTPhoneNumber.m */; };
 		180CFDDB1DFD69FB0042A270 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDDA1DFD69FB0042A270 /* NSString+Extension.m */; };
 		180CFDDF1DFD72C40042A270 /* BCTContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CFDDD1DFD72C40042A270 /* BCTContactTableViewCell.m */; };
 		180CFDE01DFD72C40042A270 /* BCTContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CFDDE1DFD72C40042A270 /* BCTContactTableViewCell.xib */; };
@@ -86,10 +84,6 @@
 		180CFDCE1DFD64470042A270 /* BCTContact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BCTContact+CoreDataProperties.m"; path = "Model/BCTContact+CoreDataProperties.m"; sourceTree = "<group>"; };
 		180CFDCF1DFD64470042A270 /* BCTContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTContact.h; path = Model/BCTContact.h; sourceTree = "<group>"; };
 		180CFDD01DFD64470042A270 /* BCTContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTContact.m; path = Model/BCTContact.m; sourceTree = "<group>"; };
-		180CFDD11DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BCTPhoneNumber+CoreDataProperties.h"; path = "Model/BCTPhoneNumber+CoreDataProperties.h"; sourceTree = "<group>"; };
-		180CFDD21DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BCTPhoneNumber+CoreDataProperties.m"; path = "Model/BCTPhoneNumber+CoreDataProperties.m"; sourceTree = "<group>"; };
-		180CFDD31DFD64470042A270 /* BCTPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTPhoneNumber.h; path = Model/BCTPhoneNumber.h; sourceTree = "<group>"; };
-		180CFDD41DFD64470042A270 /* BCTPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCTPhoneNumber.m; path = Model/BCTPhoneNumber.m; sourceTree = "<group>"; };
 		180CFDD91DFD69FB0042A270 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "Extensions/NSString+Extension.h"; sourceTree = "<group>"; };
 		180CFDDA1DFD69FB0042A270 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "Extensions/NSString+Extension.m"; sourceTree = "<group>"; };
 		180CFDDC1DFD72C40042A270 /* BCTContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCTContactTableViewCell.h; path = Controllers/MainViewController/BCTContactTableViewCell.h; sourceTree = "<group>"; };
@@ -383,10 +377,6 @@
 				180CFDCE1DFD64470042A270 /* BCTContact+CoreDataProperties.m */,
 				180CFDCF1DFD64470042A270 /* BCTContact.h */,
 				180CFDD01DFD64470042A270 /* BCTContact.m */,
-				180CFDD11DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.h */,
-				180CFDD21DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m */,
-				180CFDD31DFD64470042A270 /* BCTPhoneNumber.h */,
-				180CFDD41DFD64470042A270 /* BCTPhoneNumber.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -634,10 +624,8 @@
 				180CFDA81DFD5A9F0042A270 /* BCTDataBaseManager.m in Sources */,
 				18A870221DEB22D100B6439E /* BCTValidator.m in Sources */,
 				184AB91A1E099B0C0094A6DD /* UIButton+CustomStyle.m in Sources */,
-				180CFDD81DFD64470042A270 /* BCTPhoneNumber.m in Sources */,
 				180CFDDF1DFD72C40042A270 /* BCTContactTableViewCell.m in Sources */,
 				18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */,
-				180CFDD71DFD64470042A270 /* BCTPhoneNumber+CoreDataProperties.m in Sources */,
 				180CFDDB1DFD69FB0042A270 /* NSString+Extension.m in Sources */,
 				180CFDD61DFD64470042A270 /* BCTContact.m in Sources */,
 				18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */,

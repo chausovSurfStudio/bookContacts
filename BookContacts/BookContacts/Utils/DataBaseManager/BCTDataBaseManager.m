@@ -11,7 +11,6 @@
 #import "AppDelegate.h"
 
 #import "BCTContact.h"
-#import "BCTPhoneNumber.h"
 
 #import "NSString+Extension.h"
 
@@ -36,10 +35,11 @@
 }
 
 - (void)createContactWithName:(NSString *)name
-                              surname:(NSString *)surname
-                      mainPhoneNumber:(NSString *)mainPhoneNumber
-                     addedPhoneNumber:(NSString *)addedPhoneNumber
-                            likedFlag:(BOOL)likedFlag {
+                      surname:(NSString *)surname
+              mainPhoneNumber:(NSString *)mainPhoneNumber
+             addedPhoneNumber:(NSString *)addedPhoneNumber
+                    likedFlag:(BOOL)likedFlag
+                   completion:(void(^)(BOOL success))completion {
     if (![name notEmpty] || ![mainPhoneNumber notEmpty]) {
         // сущность контакта не может быть создана без обязательных полей
         return;
@@ -49,25 +49,20 @@
         contact.name = name;
         contact.surname = surname;
         contact.liked = [NSNumber numberWithBool:likedFlag];
-        
-        BCTPhoneNumber *mainPhoneNumberEntity = [BCTPhoneNumber MR_createEntityInContext:localContext];
-        mainPhoneNumberEntity.phoneNumber = mainPhoneNumber;
-        contact.mainPhoneNumber = mainPhoneNumberEntity;
+        contact.mainPhoneNumber = mainPhoneNumber;
         
         if ([addedPhoneNumber notEmpty]) {
-            BCTPhoneNumber *addedPhoneNumberEntity = [BCTPhoneNumber MR_createEntityInContext:localContext];
-            addedPhoneNumberEntity.phoneNumber = addedPhoneNumber;
-            [contact addAddedPhoneNumbersObject:addedPhoneNumberEntity];
+            contact.addedPhoneNumber = addedPhoneNumber;
         }
         [localContext MR_saveToPersistentStoreAndWait];
     } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
-        
+        completion(contextDidSave);
     }];
 }
 
 - (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"phoneNumber == %@", phoneNumber];
-    NSArray *phones = [BCTPhoneNumber MR_findAllWithPredicate:predicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.mainPhoneNumber == %@ AND SELF.addedPhoneNumber == %@", phoneNumber, phoneNumber];
+    NSArray *phones = [BCTContact MR_findAllWithPredicate:predicate];
     return phones.count > 0 ? NO : YES;
 }
 

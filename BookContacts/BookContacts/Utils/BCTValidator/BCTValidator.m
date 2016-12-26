@@ -58,7 +58,7 @@ static NSUInteger const phoneMaxLength = 12;
         // слишком много символов "+"
         return nil;
     }
-    if ([tempString rangeOfString:@"+"].location != 0) {
+    if ([tempString rangeOfString:@"+"].location != 0 && [tempString rangeOfString:@"+"].location != NSNotFound) {
         // "+" не на первом месте в строке
         return nil;
     }

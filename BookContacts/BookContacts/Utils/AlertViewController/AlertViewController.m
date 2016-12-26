@@ -12,7 +12,7 @@
 #import "BCTConstant.h"
 #import "FrameAccessor.h"
 
-static NSInteger const alertHeight = 100;
+static NSInteger const alertHeight = 70;
 static NSInteger const alertLeftSpace = 74;
 static NSInteger const alertRightSpace = 6;
 static CGFloat const alertDurationAnimation = 0.5;
@@ -156,7 +156,7 @@ static CGFloat const alertLabelHeightOffset = 12;
 //                             self.view.frame = CGRectMake(0, 0, self.view.width, alertHeight);
                              
                              self.view.frame = CGRectMake(0, resultTopSpace, SCREEN_WIDTH, height);
-                             self.alertLabel.frame = CGRectMake(alertLeftSpace, 0, SCREEN_WIDTH - alertLeftSpace - alertRightSpace, height);
+                             self.alertLabel.frame = CGRectMake(alertLeftSpace, alertLabelHeightOffset, SCREEN_WIDTH - alertLeftSpace - alertRightSpace, height);
                              self.alertLabel.alpha = 1;
                          }
                      } completion:^(BOOL finished){

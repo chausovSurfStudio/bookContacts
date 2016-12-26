@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class BCTContact, BCTPhoneNumber;
+@class BCTContact;
 
 @interface BCTDataBaseManager : NSObject
 
@@ -20,7 +20,8 @@
                       surname:(NSString *)surname
               mainPhoneNumber:(NSString *)mainPhoneNumber
              addedPhoneNumber:(NSString *)addedPhoneNumber
-                    likedFlag:(BOOL)likedFlag;
+                    likedFlag:(BOOL)likedFlag
+                   completion:(void(^)(BOOL success))completion;
 
 - (BOOL)checkOnUniquePhoneNumber:(NSString *)phoneNumber;
 
