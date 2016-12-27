@@ -48,4 +48,11 @@
     self.textField.text = @"";
 }
 
+- (IBAction)likedButtonPressed:(UIButton *)sender {
+    if ([self.cellDelegate respondsToSelector:@selector(likedButtonDidPress)]) {
+        [self.cellDelegate likedButtonDidPress];
+    }
+}
+
+
 @end

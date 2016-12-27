@@ -16,6 +16,8 @@
 
 - (NSArray <BCTContact *> *)findAndSortAllContacts;
 
+- (NSArray <BCTContact *> *)findAndSortLikedContacts;
+
 - (void)createContactWithName:(NSString *)name
                       surname:(NSString *)surname
               mainPhoneNumber:(NSString *)mainPhoneNumber

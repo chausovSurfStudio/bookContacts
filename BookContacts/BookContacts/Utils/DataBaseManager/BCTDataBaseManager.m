@@ -34,6 +34,14 @@
     return sortedContacts;
 }
 
+- (NSArray <BCTContact *> *)findAndSortLikedContacts {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"liked == true"];
+    NSArray *allContacts = [BCTContact MR_findAllWithPredicate:predicate];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortedContacts = [allContacts sortedArrayUsingDescriptors:@[sortDescriptor]];
+    return sortedContacts;
+}
+
 - (void)createContactWithName:(NSString *)name
                       surname:(NSString *)surname
               mainPhoneNumber:(NSString *)mainPhoneNumber

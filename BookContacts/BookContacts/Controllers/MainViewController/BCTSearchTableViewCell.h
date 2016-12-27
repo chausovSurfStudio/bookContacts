@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BCTSearchTableViewCellDelegate <NSObject>
+
+- (void)likedButtonDidPress;
+
+@end
+
 @interface BCTSearchTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<BCTSearchTableViewCellDelegate> cellDelegate;
 
 @end

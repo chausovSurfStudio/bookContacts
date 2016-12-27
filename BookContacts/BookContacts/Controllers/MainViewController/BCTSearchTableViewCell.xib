@@ -30,6 +30,9 @@
                             <constraint firstAttribute="height" constant="44" id="AUN-RU-kF9"/>
                         </constraints>
                         <state key="normal" image="ic_heart.png"/>
+                        <connections>
+                            <action selector="likedButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2qZ-TA-bG0"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vw-wy-fkI">
                         <rect key="frame" x="0.0" y="59" width="320" height="1"/>

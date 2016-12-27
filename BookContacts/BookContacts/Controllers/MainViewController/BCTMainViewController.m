@@ -21,10 +21,12 @@
 static NSString *const searchCellReuseIdentifier = @"searchCellReuseIdentifier";
 static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier";
 
-@interface BCTMainViewController () <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
+@interface BCTMainViewController () <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, BCTSearchTableViewCellDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray <BCTContact *> *contacts;
+
+@property (nonatomic, assign) BOOL showingLiked;
 
 @end
 
@@ -37,6 +39,8 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
     [self configureTableView];
     
     [self configureStyle];
+    
+    self.showingLiked = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,7 +49,11 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 }
 
 - (void)refreshTable {
-    self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
+    if (self.showingLiked) {
+        self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortLikedContacts];
+    } else {
+        self.contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
+    }
     [self.tableView reloadData];
 }
 
@@ -94,6 +102,7 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         BCTSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:searchCellReuseIdentifier];
+        cell.cellDelegate = self;
         return cell;
     }
     if (indexPath.section == 1) {
@@ -139,6 +148,12 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.tableView endEditing:YES];
+}
+
+#pragma mark - BCTSearchTableViewCellDelegate
+- (void)likedButtonDidPress {
+    self.showingLiked = !self.showingLiked;
+    [self refreshTable];
 }
 
 #pragma mark - MGSwipeTableCellDelegate
