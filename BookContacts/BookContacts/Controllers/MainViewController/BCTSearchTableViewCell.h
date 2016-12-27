@@ -11,6 +11,8 @@
 @protocol BCTSearchTableViewCellDelegate <NSObject>
 
 - (void)likedButtonDidPress;
+- (void)searchTextFieldTextDidChange:(NSString *)searchString;
+- (void)searchTextFieldDidClear;
 
 @end
 

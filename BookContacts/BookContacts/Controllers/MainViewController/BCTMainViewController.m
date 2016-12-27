@@ -57,6 +57,35 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
     [self.tableView reloadData];
 }
 
+- (void)filterContactsByString:(NSString *)searchString {
+    NSArray *contacts;
+    if (self.showingLiked) {
+        contacts = [[BCTDataBaseManager sharedInstance] findAndSortLikedContacts];
+    } else {
+        contacts = [[BCTDataBaseManager sharedInstance] findAndSortAllContacts];
+    }
+    
+    if ([searchString isEqualToString:@""]) {
+        self.contacts = contacts;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationLeft];
+        return;
+    }
+    
+    searchString = [searchString stringByAppendingString:@"*"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name LIKE[c] %@", searchString];
+    NSArray *filteredByName = [contacts filteredArrayUsingPredicate:predicate];
+    
+    predicate = [NSPredicate predicateWithFormat:@"mainPhoneNumber LIKE[c] %@", searchString];
+    NSArray *filteredByPhone = [contacts filteredArrayUsingPredicate:predicate];
+    
+    NSArray *newContacts = [filteredByName arrayByAddingObjectsFromArray:filteredByPhone];
+    UITableViewRowAnimation animationType = newContacts.count != self.contacts.count ? UITableViewRowAnimationLeft : UITableViewRowAnimationNone;
+    self.contacts = newContacts;
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:animationType];
+}
+
 - (void)configureStyle {
     self.view.backgroundColor = mainBackgroundThemeNrmColor;
     self.tableView.backgroundColor = mainBackgroundThemeNrmColor;
@@ -154,6 +183,14 @@ static NSString *const contactCellReuseIdentifier = @"contactCellReuseIdentifier
 - (void)likedButtonDidPress {
     self.showingLiked = !self.showingLiked;
     [self refreshTable];
+}
+
+- (void)searchTextFieldTextDidChange:(NSString *)searchString {
+    [self filterContactsByString:searchString];
+}
+
+- (void)searchTextFieldDidClear {
+    [self filterContactsByString:@""];
 }
 
 #pragma mark - MGSwipeTableCellDelegate

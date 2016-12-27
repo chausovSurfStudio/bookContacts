@@ -10,7 +10,7 @@
 #import "BCTThemeConstant.h"
 #import "UIImage+Additions.h"
 
-@interface BCTSearchTableViewCell()
+@interface BCTSearchTableViewCell() <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIButton *likedButton;
@@ -46,6 +46,9 @@
 
 - (void)clearTextField {
     self.textField.text = @"";
+    if ([self.cellDelegate respondsToSelector:@selector(searchTextFieldDidClear)]) {
+        [self.cellDelegate searchTextFieldDidClear];
+    }
 }
 
 - (IBAction)likedButtonPressed:(UIButton *)sender {
@@ -54,5 +57,17 @@
     }
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([self.cellDelegate respondsToSelector:@selector(searchTextFieldTextDidChange:)]) {
+        [self.cellDelegate searchTextFieldTextDidChange:[textField.text stringByReplacingCharactersInRange:range withString:string]];
+    }
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self endEditing:YES];
+    return YES;
+}
 
 @end
