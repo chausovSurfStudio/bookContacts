@@ -50,20 +50,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self fillTextField];
+    [self fillTextFieldAndSwitcher];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.width, self.scrollView.height + 30.0);
     
 }
 
-- (void)fillTextField {
+- (void)fillTextFieldAndSwitcher {
     if (self.contact) {
         self.nameTextField.text = self.contact.name;
         self.surnameTextField.text = self.contact.surname;
         self.phoneTextField.text = self.contact.mainPhoneNumber;
-        NSString *extraPhone = self.contact.addedPhoneNumber;
-        if (extraPhone) {
-            self.extraPhoneTextField.text = extraPhone;
-        }
+        self.extraPhoneTextField.text = self.contact.addedPhoneNumber;
+        self.likedSwitch.on = self.contact.liked.boolValue;
     }
 }
 

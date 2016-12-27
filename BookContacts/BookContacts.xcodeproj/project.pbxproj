@@ -41,7 +41,6 @@
 		184AB9241E09A90F0094A6DD /* ic_alert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184AB9221E09A90F0094A6DD /* ic_alert@3x.png */; };
 		18A86FE71DEB21DC00B6439E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE61DEB21DC00B6439E /* main.m */; };
 		18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FE91DEB21DC00B6439E /* AppDelegate.m */; };
-		18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FEC1DEB21DC00B6439E /* ViewController.m */; };
 		18A86FF01DEB21DC00B6439E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A86FEE1DEB21DC00B6439E /* Main.storyboard */; };
 		18A86FF31DEB21DC00B6439E /* BookContacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18A86FF11DEB21DC00B6439E /* BookContacts.xcdatamodeld */; };
 		18A86FF51DEB21DC00B6439E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A86FF41DEB21DC00B6439E /* Assets.xcassets */; };
@@ -122,8 +121,6 @@
 		18A86FE61DEB21DC00B6439E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A86FE81DEB21DC00B6439E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18A86FE91DEB21DC00B6439E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18A86FEB1DEB21DC00B6439E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18A86FEC1DEB21DC00B6439E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18A86FEF1DEB21DC00B6439E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18A86FF21DEB21DC00B6439E /* BookContacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookContacts.xcdatamodel; sourceTree = "<group>"; };
 		18A86FF41DEB21DC00B6439E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -312,8 +309,6 @@
 				18A8701B1DEB220400B6439E /* Controllers */,
 				18A86FE81DEB21DC00B6439E /* AppDelegate.h */,
 				18A86FE91DEB21DC00B6439E /* AppDelegate.m */,
-				18A86FEB1DEB21DC00B6439E /* ViewController.h */,
-				18A86FEC1DEB21DC00B6439E /* ViewController.m */,
 				18A86FEE1DEB21DC00B6439E /* Main.storyboard */,
 				18A86FF41DEB21DC00B6439E /* Assets.xcassets */,
 				18A86FF61DEB21DC00B6439E /* LaunchScreen.storyboard */,
@@ -625,7 +620,6 @@
 				18A870221DEB22D100B6439E /* BCTValidator.m in Sources */,
 				184AB91A1E099B0C0094A6DD /* UIButton+CustomStyle.m in Sources */,
 				180CFDDF1DFD72C40042A270 /* BCTContactTableViewCell.m in Sources */,
-				18A86FED1DEB21DC00B6439E /* ViewController.m in Sources */,
 				180CFDDB1DFD69FB0042A270 /* NSString+Extension.m in Sources */,
 				180CFDD61DFD64470042A270 /* BCTContact.m in Sources */,
 				18A86FEA1DEB21DC00B6439E /* AppDelegate.m in Sources */,
